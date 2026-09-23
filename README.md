@@ -48,7 +48,7 @@ Log: `~/.talkback/talkback.log`.
 
 A free ElevenLabs account is enough to use it here. Setup:
 
-1. Sign up at [elevenlabs.io](https://elevenlabs.io/app/sign-up). No card is needed for the free tier.
+1. Sign up at [elevenlabs.io](https://try.elevenlabs.io/zywth2qdsmxz) (affiliate link). No card is needed for the free tier.
 2. Create a key under [API Keys](https://elevenlabs.io/app/settings/api-keys) with the `text_to_speech`, `voices_read` and `user_read` permissions. The first is enough to speak; the other two let `/talkback:voice` list voices and let you read your quota.
 3. Put the key and a voice id from the table below into `~/.talkback/config.json`, then `chmod 600` it:
 
