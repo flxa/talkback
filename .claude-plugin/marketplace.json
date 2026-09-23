@@ -1,0 +1,14 @@
+{
+  "name": "talkback",
+  "owner": {
+    "name": "Nicholas Fletcher"
+  },
+  "plugins": [
+    {
+      "name": "talkback",
+      "source": "./",
+      "description": "Speaks each reply's spoken summary and every permission / idle prompt aloud, via ElevenLabs when a key is configured, otherwise macOS say.",
+      "version": "0.3.1"
+    }
+  ]
+}

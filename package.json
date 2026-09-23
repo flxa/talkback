@@ -1,0 +1,10 @@
+{
+  "name": "talkback",
+  "version": "0.3.1",
+  "private": true,
+  "type": "module",
+  "description": "Claude Code plugin that speaks replies and prompts aloud via ElevenLabs or macOS say",
+  "scripts": {
+    "test": "node --experimental-strip-types --no-warnings test/run.ts"
+  }
+}

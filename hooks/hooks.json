@@ -1,0 +1,50 @@
+{
+  "description": "SessionStart: injects the spoken-reply contract (end every reply with a <speak> block). Stop: speaks the <speak> block of the final reply, or a stripped fallback, via a detached serialised worker so hooks never block. Notification: speaks permission and idle prompts with the project name. UserPromptSubmit: speaks a short acknowledgement phrase.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node --experimental-strip-types --no-warnings \"${CLAUDE_PLUGIN_ROOT}/hooks/session-start.ts\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node --experimental-strip-types --no-warnings \"${CLAUDE_PLUGIN_ROOT}/hooks/stop.ts\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node --experimental-strip-types --no-warnings \"${CLAUDE_PLUGIN_ROOT}/hooks/notification.ts\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node --experimental-strip-types --no-warnings \"${CLAUDE_PLUGIN_ROOT}/hooks/ack.ts\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}
